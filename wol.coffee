@@ -36,18 +36,22 @@ module.exports = (env) ->
         createCallback: (config) => new WolDevice(config)
       })
 
-  class WolDevice extends env.devices.PowerSwitch
+  plugin = new wolPlugin
+
+  class WolDevice extends env.devices.Device
+
 
     constructor: (@config) ->
       @name = @config.name
       @id = @config.id
       @mac = @config.mac
       
-      doWakeUp = ( =>
-
-      )
+      doWakeUp: () =>
+        # ...
+      
       
     # ...
 
-  wolPlugin = new wolPlugin
-  return wolPlugin
+  plugin.WolDevice = WolDevice
+
+  return plugin
