@@ -1,4 +1,4 @@
-pimatic-plugin-template
+pimatic-wol
 =======================
 
 See the [development guide](http://pimatic.org/guide/development/required-skills-readings/) for
