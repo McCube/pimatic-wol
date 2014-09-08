@@ -1,10 +1,11 @@
 { "name": "pimatic-wol",
   "description": "Set Wake On Lan",
   "author": "Sebastian Scheuermann <you@example.com> ()",
-  "main": "wol",
+  "main": "wol.coffee",
   "files": [
     "wol.coffee",
     "README.md",
+    "device-config-schema.coffee",
     "wol-config-schema.coffee"
   ],
   "version": "0.8.0",
@@ -16,6 +17,7 @@
   },
   "configSchema": "wol-config-schema.coffee",
   "dependencies": {
+    "wake_on_lan": "0.0.3"
   },
   "peerDependencies": {
     "pimatic": "0.8.*"
