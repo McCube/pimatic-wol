@@ -27,5 +27,5 @@ Device examples
       "class": "WolDevice", 
       "name": "My PC",
       "mac": "AA-BB-CC-DD-EE-FF",
-      "repeats" 1
+      "repeats": 1
     }
