@@ -15,3 +15,17 @@ Some Tips:
 * Add all edited files with `git add file`. For example: `git add package.json` then commit you changes 
   with `git commit`.
 * After that you can push you commited work to github: `git push`
+* 
+
+Device examples
+---------------
+
+###Wol Device
+
+    { 
+      "id": "pc_device",
+      "class": "WolDevice", 
+      "name": "My PC",
+      "mac": "AA-BB-CC-DD-EE-FF",
+      "repeats" 1
+    }
