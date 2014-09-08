@@ -38,16 +38,19 @@ module.exports = (env) ->
 
   plugin = new wolPlugin
 
-  class WolDevice extends env.devices.Device
+  class WolDevice extends env.devices.SwitchActuator
 
 
     constructor: (@config) ->
       @name = @config.name
       @id = @config.id
-      @mac = @config.mac
+
+      super()
       
-      doWakeUp: () =>
-        # ...
+      
+    turnOn: ->
+      @changeStateTo on
+      wol.wake(@config.mac)
       
       
     # ...
