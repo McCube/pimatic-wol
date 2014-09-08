@@ -20,6 +20,9 @@ module.exports = (env) ->
   # Require the [cassert library](https://github.com/rhoot/cassert).
   assert = env.require 'cassert'
 
+  # Require the [wake on LAN utilities for node.js](https://github.com/agnat/node_wake_on_lan
+  wol = env.require 'wake_on_lan'
+
   # Include you own depencies with nodes global require function:
   #  
   #     someThing = require 'someThing'
@@ -27,7 +30,7 @@ module.exports = (env) ->
 
   # ###MyPlugin class
   # Create a class that extends the Plugin class and implements the following functions:
-  class MyPlugin extends env.plugins.Plugin
+  class wolPlugin extends env.plugins.Plugin
 
     # ####init()
     # The `init` function is called by the framework to ask your plugin to initialise.
@@ -44,6 +47,6 @@ module.exports = (env) ->
 
   # ###Finally
   # Create a instance of my plugin
-  myPlugin = new MyPlugin
+  wolPlugin = new wolPlugin
   # and return it to the framework.
-  return myPlugin
+  return wolPlugin
