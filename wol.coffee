@@ -38,20 +38,37 @@ module.exports = (env) ->
 
   plugin = new wolPlugin
 
-  class WolDevice extends env.devices.SwitchActuator
+  class WolDevice extends env.devices.PowerSwitch
+    _state: null
+    
+    actions:
+      turnOn:
+        description: "send wol"
+      turnOff:
+        description: "send shutdown"
 
+    attributes:
+      state:
+        description: "current state of the devise"
+        type: "string"
 
     constructor: (@config) ->
       @name = @config.name
       @id = @config.id
+      @repeats = @config.repeats
 
       super()
-      
+    
+    getState: () ->
+      return Promise.resolve @_state      
       
     turnOn: ->
       @changeStateTo on
-      wol.wake(@config.mac)
+      env.logger.debug "test"
+      wol.wake(@config.mac) while @repeats -= 1
       
+    turnOff: ->
+      @changeStatrTo off
       
     # ...
 
