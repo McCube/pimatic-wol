@@ -60,7 +60,11 @@ module.exports = (env) ->
       super()
     
     getState: () ->
-      return Promise.resolve @_state      
+      return Promise.resolve @_state
+
+    changeStateTo: (state) ->
+      assert state is on or state is off
+      _state = state      
       
     turnOn: ->
       @changeStateTo on
@@ -68,7 +72,7 @@ module.exports = (env) ->
       wol.wake(@config.mac) while @repeats -= 1
       
     turnOff: ->
-      @changeStatrTo off
+      @changeStateTo off
       
     # ...
 
