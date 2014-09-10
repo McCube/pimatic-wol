@@ -40,6 +40,7 @@ module.exports = (env) ->
 
   class WolDevice extends env.devices.PowerSwitch
     _state: null
+    repeats: 2
     
     actions:
       turnOn:
