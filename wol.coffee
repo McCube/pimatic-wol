@@ -64,7 +64,7 @@ module.exports = (env) ->
 
     changeStateTo: (state) ->
       assert state is on or state is off
-      _state = state      
+      @_state = state      
       
     turnOn: ->
       @changeStateTo on
